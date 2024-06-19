@@ -20,7 +20,7 @@ data "yandex_compute_image" "debian_image" {
 }
 
 resource "yandex_compute_instance" "vm-1" {
-  name = "vm-1"
+  name     = "vm-1"
   hostname = "sf-b5-vm1"
 
   resources {
@@ -44,7 +44,7 @@ resource "yandex_compute_instance" "vm-1" {
   }
 
   metadata = {
-    ssh-keys = "arnsdx-admin:${file("~/.ssh/id_yandex.pub")}"
+    ssh-keys  = "arnsdx-admin:${file("~/.ssh/id_yandex.pub")}"
     user-data = "#cloud-config\ndatasource:\n Ec2:\n  strict_id: false\nssh_pwauth: no\nusers:\n- name: arnsdx-admin\n  sudo: ALL=(ALL) NOPASSWD:ALL\n  shell: /bin/bash\n  ssh_authorized_keys:\n  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDE/bWEwub/9IXYtbHyFp8GBlOQSvCPG7OPalfuw/791ETWkmShNrUM5Edo7Cjzl5+FhqzM+RJj/Tvve0V1CLaQEKkgmONJ92PrZaMB+F1p/0651KOvk6+z7X++ulb9Cz4tC3zeW2Yw7Lb9ShAQlWN+7Z9lQqjBor5SaE/QKYssGafIIZaafupsg7WuOqg22+5SwyrgM6QKWvo/3dAkhafqR62XERVavWt2/g2UdUYkNVbS3r7ZsWgf+W99GtH4IFHczKEPq72GawCSz75j6fth2H5Sn1KRsw2dwxcbC7RKbUAjejleoncIkNts6MlGFRWq66sLUAOyWZbJUwf7ir1qXWJdPreOtkoSZaQuJchSoQP4Wmr74wFy19h64R7ZV7yoEr02B5wWP+i8TVoD8No33XKEYTjUAxhKcdwddfDVtAVUdj+dIVkH5Qr1bg6JgSnwSuId3iv0WN5yFvMbdy9yK2/SrCOQN2ChKVV37/r6JxCD04JJnw4wxEIDAjy4GX1Ea6QCisQr7orOjS14gTVWjYYeQCSpMoChmYMTjPpt/h1Pu+dadnxQU1bWkPzeK7TBBLrokf5w549CM1ng7sw2482gr4OFEjMM+W/X3jjpkQbgtExBAbAjAHz8EJQVXyHJRabC/DBBIXGOn+EcMeUsC01mvE86KOwPFBb0ZX0Z7w==\n#cloud-config\nruncmd: []"
   }
 
@@ -55,7 +55,7 @@ resource "yandex_compute_instance" "vm-1" {
 }
 
 resource "yandex_compute_instance" "vm-2" {
-  name = "vm-2"
+  name     = "vm-2"
   hostname = "sf-b5-vm2"
 
   resources {
@@ -79,7 +79,7 @@ resource "yandex_compute_instance" "vm-2" {
   }
 
   metadata = {
-    ssh-keys = "arnsdx-admin:${file("~/.ssh/id_yandex.pub")}"
+    ssh-keys  = "arnsdx-admin:${file("~/.ssh/id_yandex.pub")}"
     user-data = "#cloud-config\ndatasource:\n Ec2:\n  strict_id: false\nssh_pwauth: no\nusers:\n- name: arnsdx-admin\n  sudo: ALL=(ALL) NOPASSWD:ALL\n  shell: /bin/bash\n  ssh_authorized_keys:\n  - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDE/bWEwub/9IXYtbHyFp8GBlOQSvCPG7OPalfuw/791ETWkmShNrUM5Edo7Cjzl5+FhqzM+RJj/Tvve0V1CLaQEKkgmONJ92PrZaMB+F1p/0651KOvk6+z7X++ulb9Cz4tC3zeW2Yw7Lb9ShAQlWN+7Z9lQqjBor5SaE/QKYssGafIIZaafupsg7WuOqg22+5SwyrgM6QKWvo/3dAkhafqR62XERVavWt2/g2UdUYkNVbS3r7ZsWgf+W99GtH4IFHczKEPq72GawCSz75j6fth2H5Sn1KRsw2dwxcbC7RKbUAjejleoncIkNts6MlGFRWq66sLUAOyWZbJUwf7ir1qXWJdPreOtkoSZaQuJchSoQP4Wmr74wFy19h64R7ZV7yoEr02B5wWP+i8TVoD8No33XKEYTjUAxhKcdwddfDVtAVUdj+dIVkH5Qr1bg6JgSnwSuId3iv0WN5yFvMbdy9yK2/SrCOQN2ChKVV37/r6JxCD04JJnw4wxEIDAjy4GX1Ea6QCisQr7orOjS14gTVWjYYeQCSpMoChmYMTjPpt/h1Pu+dadnxQU1bWkPzeK7TBBLrokf5w549CM1ng7sw2482gr4OFEjMM+W/X3jjpkQbgtExBAbAjAHz8EJQVXyHJRabC/DBBIXGOn+EcMeUsC01mvE86KOwPFBb0ZX0Z7w==\n#cloud-config\nruncmd: []"
   }
 
